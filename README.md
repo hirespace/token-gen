@@ -15,7 +15,7 @@ npm install codegen
 Just add the package from atmosphere:
 
 ```
-meteor add codegen
+meteor add hirespace:codegen
 ```
 
 # Usage
@@ -41,4 +41,4 @@ be the given character length.
 
 
 # License
-Made by Hire Space (hirespace.com) and distributed using a ISC license.
+Made with :heart: by Hire Space ([hirespace.com](https://www.hirespace.com)) and distributed using a ISC license.
