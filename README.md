@@ -8,7 +8,7 @@ codes for your voucher codes, keys, etc.
 
 ## NPM
 ```
-npm install codegen
+npm install hs-codegen
 ```
 
 ## Meteor

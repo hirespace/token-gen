@@ -1,5 +1,5 @@
 {
-  "name": "codegen",
+  "name": "hs-codegen",
   "version": "0.1.0",
   "description": "Generate unique human readable codes (e.g. vouchers, referrals, passwords, keys)",
   "main": "index.js",
