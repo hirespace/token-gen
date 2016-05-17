@@ -45,7 +45,6 @@ var Code = exports.Code = function () {
         key: '_generateCode',
         value: function _generateCode() {
             var notPaddedCode = (0, _transforms.toAlphabet)(this._seed, this._alphabet);
-            console.log(notPaddedCode);
             this.code = (0, _pad.pad)(notPaddedCode, this.codeLength, '0');
         }
     }, {
@@ -86,7 +85,7 @@ exports.default = _Codegen;
 exports.Code = _code.Code;
 exports._toAlphabet = _transforms.toAlphabet;
 exports._pad = _pad.pad;
-}).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_e690e328.js","/")
+}).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_3bc6072e.js","/")
 },{"./code":1,"./utils/pad":3,"./utils/transforms":4,"b55mWE":7,"buffer":6}],3:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 'use strict';

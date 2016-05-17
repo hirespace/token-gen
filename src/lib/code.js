@@ -26,7 +26,6 @@ export class Code {
 
     _generateCode() {
         let notPaddedCode = toAlphabet(this._seed, this._alphabet);
-        console.log(notPaddedCode);
         this.code = pad(notPaddedCode, this.codeLength, '0');
     }
 
