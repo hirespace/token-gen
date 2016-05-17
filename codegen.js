@@ -1,3 +1,0 @@
-Codegen = function Codegen() {
-
-}

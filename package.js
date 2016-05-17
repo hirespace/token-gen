@@ -14,7 +14,7 @@ Package.onUse(function (api) {
   api.versionsFrom('1.1.0.2');
 
   api.addFiles([
-    'codegen.js'
+    'dist/lib/codegen.js'
   ]);
 
   api.export('Codegen');
