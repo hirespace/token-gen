@@ -17,7 +17,7 @@ export class Code {
     }
 
     toString() {
-        return this._code;
+        return this.code;
     }
 
     _generateSeed() {
@@ -26,7 +26,7 @@ export class Code {
 
     _generateCode() {
         let notPaddedCode = toAlphabet(this._seed, this._alphabet);
-        this._code = pad(notPaddedCode, this.codeLength, '0');
+        this.code = pad(notPaddedCode, this.codeLength, '0');
     }
 
     regenerate() {
