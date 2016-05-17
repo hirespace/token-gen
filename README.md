@@ -24,16 +24,24 @@ The most common usage would be:
 ```javascript
 var code = new Codegen.Code();
 
-console.log(code); // "48CMLN0000"
+console.log(code); // "48CML"
 ```
+
+The amount of different codes you could generate is
+`alphabetLength ^ codeLength`. We use a default alphabet composed of
+32 characters (`0123456789ACDEFGHJKLMNPQRTUVWXYZ`) that are
+not confusing to read (e.g. we removed B because it
+could be confused with an 8). Therefore, the maximum amount of different
+codes with a 5 characters code is 33554432. This is more than enough for
+most usages. If you need more, the code length can be customised.
 
 ## Custom length
 The library allows customising the character length of the generated code:
 
 ```javascript
-var code = new Codegen.Code(5);
+var code = new Codegen.Code(3);
 
-console.log(code); // "DP5A9"
+console.log(code); // "DP5"
 ```
 
 The default length is 10 characters. It is warrantied that the length will

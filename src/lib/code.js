@@ -2,7 +2,7 @@ import { toAlphabet } from './utils/transforms';
 import { pad } from './utils/pad';
 
 export class Code {
-    constructor(codeLength = 10) {
+    constructor(codeLength = 5) {
         if (typeof codeLength !== 'number')
             throw new TypeError(
                 'The first argument (Code length) should be a number'
@@ -26,6 +26,7 @@ export class Code {
 
     _generateCode() {
         let notPaddedCode = toAlphabet(this._seed, this._alphabet);
+        console.log(notPaddedCode);
         this.code = pad(notPaddedCode, this.codeLength, '0');
     }
 
