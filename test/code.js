@@ -20,5 +20,14 @@ describe('Code generator', () => {
 
       expect(code.toString().length).to.equal(5);
     });
+
+  });
+
+  describe('Code instance', () => {
+    it('has a code property', () => {
+      let code = new Code();
+      
+      expect(code.code).to.exist;
+    });
   });
 });
