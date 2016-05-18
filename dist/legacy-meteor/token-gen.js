@@ -1,5 +1,17 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
+"use strict";
+
+var _tokenGen = require("./token-gen");
+
+var _tokenGen2 = _interopRequireDefault(_tokenGen);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+TokenGen = _tokenGen2.default;
+}).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_f2d90fed.js","/")
+},{"./token-gen":2,"b55mWE":8,"buffer":7}],2:[function(require,module,exports){
+(function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13,20 +25,18 @@ var _pad = require('./utils/pad');
 
 var _token = require('./token');
 
-var _TokenGen = {
+var TokenGen = {
     Token: _token.Token,
     _toAlphabet: _transforms.toAlphabet,
     _pad: _pad.pad
 };
 
-TokenGen = _TokenGen;
-
-exports.default = _TokenGen;
+exports.default = TokenGen;
 exports.Token = _token.Token;
 exports._toAlphabet = _transforms.toAlphabet;
 exports._pad = _pad.pad;
-}).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_b97f1714.js","/")
-},{"./token":2,"./utils/pad":3,"./utils/transforms":4,"b55mWE":7,"buffer":6}],2:[function(require,module,exports){
+}).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/token-gen.js","/")
+},{"./token":3,"./utils/pad":4,"./utils/transforms":5,"b55mWE":8,"buffer":7}],3:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 'use strict';
 
@@ -86,7 +96,7 @@ var Token = exports.Token = function () {
     return Token;
 }();
 }).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/token.js","/")
-},{"./utils/pad":3,"./utils/transforms":4,"b55mWE":7,"buffer":6}],3:[function(require,module,exports){
+},{"./utils/pad":4,"./utils/transforms":5,"b55mWE":8,"buffer":7}],4:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 'use strict';
 
@@ -109,7 +119,7 @@ function pad(str, digits, padder) {
     return str;
 }
 }).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/utils/pad.js","/utils")
-},{"b55mWE":7,"buffer":6}],4:[function(require,module,exports){
+},{"b55mWE":8,"buffer":7}],5:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 'use strict';
 
@@ -146,7 +156,7 @@ function toAlphabet(num, alphabet) {
     return str;
 }
 }).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/utils/transforms.js","/utils")
-},{"b55mWE":7,"buffer":6}],5:[function(require,module,exports){
+},{"b55mWE":8,"buffer":7}],6:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
@@ -274,7 +284,7 @@ var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 }(typeof exports === 'undefined' ? (this.base64js = {}) : exports))
 
 }).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/../../node_modules/gulp-browserify/node_modules/base64-js/lib/b64.js","/../../node_modules/gulp-browserify/node_modules/base64-js/lib")
-},{"b55mWE":7,"buffer":6}],6:[function(require,module,exports){
+},{"b55mWE":8,"buffer":7}],7:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 /*!
  * The buffer module from node.js, for the browser.
@@ -1387,7 +1397,7 @@ function assert (test, message) {
 }
 
 }).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/../../node_modules/gulp-browserify/node_modules/buffer/index.js","/../../node_modules/gulp-browserify/node_modules/buffer")
-},{"b55mWE":7,"base64-js":5,"buffer":6,"ieee754":8}],7:[function(require,module,exports){
+},{"b55mWE":8,"base64-js":6,"buffer":7,"ieee754":9}],8:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 // shim for using process in browser
 
@@ -1454,7 +1464,7 @@ process.chdir = function (dir) {
 };
 
 }).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/../../node_modules/gulp-browserify/node_modules/process/browser.js","/../../node_modules/gulp-browserify/node_modules/process")
-},{"b55mWE":7,"buffer":6}],8:[function(require,module,exports){
+},{"b55mWE":8,"buffer":7}],9:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
@@ -1542,4 +1552,4 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 }
 
 }).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/../../node_modules/ieee754/index.js","/../../node_modules/ieee754")
-},{"b55mWE":7,"buffer":6}]},{},[1])
+},{"b55mWE":8,"buffer":7}]},{},[1])
