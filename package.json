@@ -1,6 +1,6 @@
 {
   "name": "token-gen",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "Generate unique human readable codes (e.g. vouchers, referrals, passwords, keys)",
   "main": "index.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hirespace/codegen.git"
+    "url": "git+https://github.com/hirespace/token-gen.git"
   },
   "author": "Hire Space",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hirespace/codegen/issues"
+    "url": "https://github.com/hirespace/token-gen/issues"
   },
-  "homepage": "https://github.com/hirespace/codegen#readme",
+  "homepage": "https://github.com/hirespace/token-gen#readme",
   "devDependencies": {
     "babel-core": "^6.8.0",
     "babel-polyfill": "^6.8.0",

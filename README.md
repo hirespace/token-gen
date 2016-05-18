@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/hirespace/codegen.svg?branch=master)](https://travis-ci.org/hirespace/codegen)
+[![Build Status](https://travis-ci.org/hirespace/token-gen.svg?branch=master)](https://travis-ci.org/hirespace/token-gen)
 
 # TokenGen
 TokenGen is a small library that will allow you to generate human readable
