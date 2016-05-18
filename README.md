@@ -1,28 +1,28 @@
 [![Build Status](https://travis-ci.org/hirespace/codegen.svg?branch=master)](https://travis-ci.org/hirespace/codegen)
 
-# Codegen
-Codegen is a small library that will allow you to generate human readable
+# TokenGen
+TokenGen is a small library that will allow you to generate human readable
 codes for your voucher codes, keys, etc.
 
 # Installation
 
 ## NPM
 ```
-npm install hs-codegen
+npm install token-gen
 ```
 
 ## Meteor
 Just add the package from atmosphere:
 
 ```
-meteor add hirespace:codegen
+meteor add hirespace:token-gen
 ```
 
 # Usage
 The most common usage would be:
 
 ```javascript
-var code = new Codegen.Code();
+var code = new TokenGen.Token();
 
 console.log(code); // "48CML"
 ```
@@ -39,7 +39,7 @@ most usages. If you need more, the code length can be customised.
 The library allows customising the character length of the generated code:
 
 ```javascript
-var code = new Codegen.Code(3);
+var code = new TokenGen.Token(3);
 
 console.log(code); // "DP5"
 ```
@@ -49,4 +49,5 @@ be the given character length.
 
 
 # License
-Made with :heart: by Hire Space ([hirespace.com](https://www.hirespace.com)) and distributed using a ISC license.
+Made with :heart: by Hire Space ([hirespace.com](https://www.hirespace.com))
+and distributed using a ISC license.

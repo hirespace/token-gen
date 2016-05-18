@@ -1,18 +1,18 @@
 import { toAlphabet } from './utils/transforms';
 import { pad } from './utils/pad';
-import { Code } from './code';
+import { Token } from './token';
 
-const _Codegen = {
-    Code,
+const _TokenGen = {
+    Token,
     _toAlphabet: toAlphabet,
     _pad: pad
 }
 
-Codegen = _Codegen;
+TokenGen = _TokenGen;
 
 export {
-    _Codegen as default,
-    Code,
+    _TokenGen as default,
+    Token,
     toAlphabet as _toAlphabet,
     pad as _pad
 }

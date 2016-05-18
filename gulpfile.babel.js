@@ -13,7 +13,7 @@ import gutil from 'gulp-util';
 var paths = {
   test: 'test/**/*.js',
   lib: 'src/lib/**/*.js',
-  bin: 'src/codegen.js',
+  bin: 'src/token-gen.js',
   tmp: 'dist/tmp',
   dist: 'dist'
 }
@@ -108,7 +108,7 @@ gulp.task('build-lib-transpile', () => {
 gulp.task('build-lib-browserify',
   ['build-lib-transpile'],
   () => {
-    return gulp.src(`${paths.tmp}/codegen.js`)
+    return gulp.src(`${paths.tmp}/token-gen.js`)
       .pipe(browserify({
   		  insertGlobals : true
       }))

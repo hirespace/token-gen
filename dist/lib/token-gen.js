@@ -5,7 +5,35 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Code = undefined;
+exports._pad = exports._toAlphabet = exports.Token = exports.default = undefined;
+
+var _transforms = require('./utils/transforms');
+
+var _pad = require('./utils/pad');
+
+var _token = require('./token');
+
+var _TokenGen = {
+    Token: _token.Token,
+    _toAlphabet: _transforms.toAlphabet,
+    _pad: _pad.pad
+};
+
+TokenGen = _TokenGen;
+
+exports.default = _TokenGen;
+exports.Token = _token.Token;
+exports._toAlphabet = _transforms.toAlphabet;
+exports._pad = _pad.pad;
+}).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_b97f1714.js","/")
+},{"./token":2,"./utils/pad":3,"./utils/transforms":4,"b55mWE":7,"buffer":6}],2:[function(require,module,exports){
+(function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Token = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -15,26 +43,26 @@ var _pad = require('./utils/pad');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Code = exports.Code = function () {
-    function Code() {
-        var codeLength = arguments.length <= 0 || arguments[0] === undefined ? 5 : arguments[0];
+var Token = exports.Token = function () {
+    function Token() {
+        var tokenLength = arguments.length <= 0 || arguments[0] === undefined ? 5 : arguments[0];
 
-        _classCallCheck(this, Code);
+        _classCallCheck(this, Token);
 
-        if (typeof codeLength !== 'number') throw new TypeError('The first argument (Code length) should be a number');
+        if (typeof tokenLength !== 'number') throw new TypeError('The first argument (Token length) should be a number');
 
-        this.codeLength = codeLength;
+        this.tokenLength = tokenLength;
 
         this._alphabet = '0123456789ACDEFGHJKLMNPQRTUVWXYZ';
-        this._maxSeed = Math.pow(this._alphabet.length, this.codeLength);
+        this._maxSeed = Math.pow(this._alphabet.length, this.tokenLength);
 
         this.regenerate();
     }
 
-    _createClass(Code, [{
+    _createClass(Token, [{
         key: 'toString',
         value: function toString() {
-            return this.code;
+            return this.token;
         }
     }, {
         key: '_generateSeed',
@@ -42,51 +70,23 @@ var Code = exports.Code = function () {
             this._seed = Math.floor(Math.random() * this._maxSeed);
         }
     }, {
-        key: '_generateCode',
-        value: function _generateCode() {
-            var notPaddedCode = (0, _transforms.toAlphabet)(this._seed, this._alphabet);
-            this.code = (0, _pad.pad)(notPaddedCode, this.codeLength, '0');
+        key: '_generateToken',
+        value: function _generateToken() {
+            var notPaddedToken = (0, _transforms.toAlphabet)(this._seed, this._alphabet);
+            this.token = (0, _pad.pad)(notPaddedToken, this.tokenLength, '0');
         }
     }, {
         key: 'regenerate',
         value: function regenerate() {
             this._generateSeed();
-            this._generateCode();
+            this._generateToken();
         }
     }]);
 
-    return Code;
+    return Token;
 }();
-}).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/code.js","/")
-},{"./utils/pad":3,"./utils/transforms":4,"b55mWE":7,"buffer":6}],2:[function(require,module,exports){
-(function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports._pad = exports._toAlphabet = exports.Code = exports.default = undefined;
-
-var _transforms = require('./utils/transforms');
-
-var _pad = require('./utils/pad');
-
-var _code = require('./code');
-
-var _Codegen = {
-    Code: _code.Code,
-    _toAlphabet: _transforms.toAlphabet,
-    _pad: _pad.pad
-};
-
-Codegen = _Codegen;
-
-exports.default = _Codegen;
-exports.Code = _code.Code;
-exports._toAlphabet = _transforms.toAlphabet;
-exports._pad = _pad.pad;
-}).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_3bc6072e.js","/")
-},{"./code":1,"./utils/pad":3,"./utils/transforms":4,"b55mWE":7,"buffer":6}],3:[function(require,module,exports){
+}).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/token.js","/")
+},{"./utils/pad":3,"./utils/transforms":4,"b55mWE":7,"buffer":6}],3:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 'use strict';
 
@@ -1542,4 +1542,4 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 }
 
 }).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/../../node_modules/ieee754/index.js","/../../node_modules/ieee754")
-},{"b55mWE":7,"buffer":6}]},{},[2])
+},{"b55mWE":7,"buffer":6}]},{},[1])

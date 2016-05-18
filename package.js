@@ -1,6 +1,6 @@
 Package.describe({
-  name: 'hirespace:codegen',
-  version: '0.2.1',
+  name: 'hirespace:token-gen',
+  version: '0.3.0',
   summary: 'Generate unique human readable codes (e.g. vouchers, referrals, passwords, keys)',
   git: 'https://github.com/hirespace/codegen',
   documentation: 'README.md'
@@ -10,8 +10,8 @@ Package.onUse(function (api) {
   api.versionsFrom('1.1.0.2');
 
   api.addFiles([
-    'dist/lib/codegen.js'
+    'dist/lib/token-gen.js'
   ]);
 
-  api.export('Codegen');
+  api.export('TokenGen');
 });
