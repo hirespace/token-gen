@@ -1,6 +1,6 @@
 Package.describe({
   name: 'hirespace:token-gen',
-  version: '0.4.0',
+  version: '0.5.0',
   summary: 'Generate unique human readable codes (e.g. vouchers, referrals, passwords, keys)',
   git: 'https://github.com/hirespace/token-gen',
   documentation: 'README.md'

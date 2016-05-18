@@ -11,11 +11,13 @@ var _pad = require('./utils/pad');
 
 var _token = require('./token');
 
-var TokenGen = {
-    Token: _token.Token,
-    _toAlphabet: _transforms.toAlphabet,
-    _pad: _pad.pad
+var TokenGen = function TokenGen(options) {
+    return new TokenGen.Token(options);
 };
+
+TokenGen.Token = _token.Token;
+TokenGen._pad = _pad.pad;
+TokenGen._toAlphabet = _transforms.toAlphabet;
 
 exports.default = TokenGen;
 exports.Token = _token.Token;

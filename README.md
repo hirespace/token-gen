@@ -11,7 +11,7 @@ codes for your voucher codes, keys, etc.
 npm install token-gen
 ```
 
-## Meteor
+## Meteor < 1.3 (legacy)
 Just add the package from atmosphere:
 
 ```
@@ -22,30 +22,58 @@ meteor add hirespace:token-gen
 The most common usage would be:
 
 ```javascript
-var code = new TokenGen.Token();
+import TokenGen from 'token-gen'; // var TokenGen = require('token-gen');
 
-console.log(code); // "48CML"
+var code = TokenGen();
+
+console.log(code.toString()); // "48CML"
 ```
 
-The amount of different codes you could generate is
-`alphabetLength ^ codeLength`. We use a default alphabet composed of
-32 characters (`0123456789ACDEFGHJKLMNPQRTUVWXYZ`) that are
-not confusing to read (e.g. we removed B because it
-could be confused with an 8). Therefore, the maximum amount of different
-codes with a 5 characters code is 33554432. This is more than enough for
-most usages. If you need more, the code length can be customised.
-
-## Custom length
-The library allows customising the character length of the generated code:
+# Options
+The generated code can be customised passing an options object to the
+constructor:
 
 ```javascript
-var code = new TokenGen.Token(3);
+var code = TokenGen({
+    tokenLength: 3, // Default: 5
+    alphabet: 'ABC' // Default: '0123456789ACDEFGHJKLMNPQRTUVWXYZ'
+});
 
-console.log(code); // "DP5"
+console.log(code.toString()); // "BBA"
 ```
 
-The default length is 10 characters. It is warrantied that the length will
-be the given character length.
+## Full list of options
+### tokenLength
+It's the generated code character length.
+
+* default: `5`
+
+**Note:** The amount of different codes you could generate is
+`alphabetLength ^ codeLength`. Therefore, with the default
+alphabet, the maximum amount of different
+codes with a 5 characters code is 33554432. We found 33 million codes is more
+than enough for most usages. If you need more, the code
+length can be customised.
+
+As this is the most common option, it is possible to call the generator
+directly with a number, which represents the tokenLength:
+
+```javascript
+var code = TokenGen(3);
+
+console.log(code.toString()); // "20A"
+```
+
+### alphabet
+The character included in this string will be the only characters used
+to generate the code. The generated codes are any combination of these
+characters.
+
+* default: `0123456789ACDEFGHJKLMNPQRTUVWXYZ`
+
+We use a default alphabet composed of
+32 characters that are not confusing to read (e.g. we removed B because it
+could be confused with an 8).
 
 
 # License
